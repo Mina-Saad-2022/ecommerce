@@ -1,0 +1,9 @@
+*{
+    font-family: 'El Messiri', sans-serif;
+}
+.lang{
+    margin-top: 6px;
+}
+.content-header .breadcrumb{
+    float: right !important;
+}
