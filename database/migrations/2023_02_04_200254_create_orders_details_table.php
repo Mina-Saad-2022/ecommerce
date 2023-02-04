@@ -11,7 +11,7 @@ return new class extends Migration
      *
      * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('orders_details', function (Blueprint $table) {
             $table->increments('id');
@@ -19,20 +19,20 @@ return new class extends Migration
             $table->decimal('price',10,2)->nullable();
             $table->decimal('discount',10,2)->nullable();
             $table->integer('order_id')->unsigned();
-            $table->foreign('order_id')->references('id')->on('orders');
             $table->integer('products_color_size_id')->unsigned();
             $table->foreign('products_color_size_id')->references('id')->on('products_color_size');
+            $table->foreign('order_id')->references('id')->on('orders');
             $table->timestamps();
         });
-            }
+    }
 
     /**
      * Reverse the migrations.
      *
      * @return void
      */
-    public function down(): void
+    public function down()
     {
-        //
+        Schema::dropIfExists('orders_details');
     }
 };
