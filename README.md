@@ -16,25 +16,32 @@ I put into this project most of my experience and what I learned during the prev
 <a href='https://twitter.com/Minasaa07757240' style=" text-decoration: none">
 <img src='https://i.ibb.co/KxFmp0D/Modern-paint-splash-Twitter-logo-PNG-removebg-preview.png' style="width:80px">
 </a>
-<a href='https://www.linkedin.com/in/mina-sa%C8%9Dd-81850920a/' style=" text-decoration: none">
-<img src='http://cdn.onlinewebfonts.com/svg/img_5362.png' style="width:80px">
-</a>
+
+
 <a href='https://github.com/Mina-Saad-2022' style=" text-decoration: none">
+<img src='https://www5.0zz0.com/2023/02/05/14/653911171.png' style="width:80px">
+</a>
+
+
+<a href='https://www.linkedin.com/in/mina-sa%C8%9Dd-81850920a/' style=" text-decoration: none">
 <img src='https://i.ibb.co/vVk9Jxb/Modern-paint-splash-Linkedin-logo-PNG-removebg-preview.png' style="width:80px">
 </a>
 </div>
-<div>
-<a id="parent" style="display: flex; text-decoration: none" href="https://mina-saad-2021.netlify.app/">
-  <div id="wide" style=" width: 50%; margin-top:0px"><img src='https://i.ibb.co/frBTkqK/oooo-plus-105.png' style='width: 200px; text-align: center; display:block; margin-left: auto; margin-right: auto;'>
-</div>
+
+
+
+
+
   <div id="narrow">
-<h3 style='text-align: center;'>
-<span style='color: yellow;'>
-Mina Saad :
-</span>
-Hello! I’m skilled Back-end Developer who is very passionate about web programming field . I'm looking forward to develop myself in this field..
-</h3
->
-</div>
+<h2 style='text-align: center;'>
+<span>
+Hello! I’m 
+<a href="https://mina-saad-2021.netlify.app/">
+Mina Saad
 </a>
+, I skilled Back-end Developer who is very passionate about web programming field . I'm looking forward to develop myself in this field..
+</span>
+
+</h2>
+
 </div>
