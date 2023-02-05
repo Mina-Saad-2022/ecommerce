@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
-
+use App\Http\Controllers\Ecommerce_controller ;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,14 +16,19 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]
-    ], static function(){
+        'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
+    ], static function () {
 
 
     Route::get('/', static function () {
-        return view('index');
+        return view('index')->name('index');
+    });
+    Route::group(['prefix' => 'ecommerce', 'as' => 'ecommerce.'], function () {
+
+        Route::get('/index', [Ecommerce_controller::class, 'index'])->name('index');
+
     });
 
-
+    Route::get('/', [Ecommerce_controller::class, 'home'])->name('index');
 
 });

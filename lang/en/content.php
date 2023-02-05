@@ -5,7 +5,10 @@
 return [
     'home'=>'Home Page',
     'banner'=>'Banner',
-    'new_members' =>'New Members',
+    'clients' =>'Clients',
     'sales' => 'Sales',
-    'likes' => 'Likes',
+    'products'=>'Products',
+    'earnings' => 'Earnings',
+
+
 ];

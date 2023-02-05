@@ -4,5 +4,5 @@
 
 return [
 
-    'home_page'=>'Home Page',
+    'home_page'=>'Ecommerce | Home Page',
 ];
