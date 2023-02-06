@@ -25,10 +25,14 @@ Route::group(
     });
     Route::group(['prefix' => 'ecommerce', 'as' => 'ecommerce.'], function () {
 
-        Route::get('/index', [Ecommerce_controller::class, 'index'])->name('index');
+        Route::get('dashboard/index', [Ecommerce_controller::class, 'index'])->name('index');
 
     });
 
     Route::get('/', [Ecommerce_controller::class, 'home'])->name('index');
 
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

@@ -1,5 +1,5 @@
 {{--TODO: start layout --}}
-@extends('layout.master')
+@extends('dashboard.layout.master')
 {{-- fro title page--}}
 @section('title')
     {{trans('links.home_page')}}

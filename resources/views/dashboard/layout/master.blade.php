@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>
@@ -11,15 +8,16 @@
     </title>
 
     <!-- Google Font: Source Sans Pro -->
-    @include('layout.style')
+    @include('dashboard.layout.style')
+
 
     @if (App::getLocale() === 'ar')
-        @include('layout.rtl_links')
+        @include('dashboard.layout.rtl_links')
     @endif
 
 
 </head>
-<body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+<body class="hold-transition dark-mode sidebar-mini dashboard.layout-fixed dashboard.layout-navbar-fixed dashboard.layout-footer-fixed">
 <div class="wrapper">
 
 
@@ -214,13 +212,13 @@
 
     {{--TODO: start footer --}}
 
-    @include('layout.footer')
+    @include('dashboard.layout.footer')
 
     {{--TODO: end footer --}}
 
 </div>
 
-@extends('layout.script')
+@extends('dashboard.layout.script')
 
 </body>
 </html>

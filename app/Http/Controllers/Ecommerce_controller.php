@@ -8,9 +8,10 @@ class Ecommerce_controller extends Controller
 {
     public function home()
     {
-        return redirect(route('ecommerce.index'));
+        return view('home');
+//        return redirect(route('ecommerce.index'));
     }
     public function index(){
-        return view('index');
+        return view('dashboard.index');
     }
 }
