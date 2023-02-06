@@ -1,29 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    @yield('title')
+
+
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+        @yield('title')
+    </title>
 
     <!-- Google Font: Source Sans Pro -->
     @include('layout.style')
 
     @if (App::getLocale() === 'ar')
-        <!-- summernote -->
-        <link rel="stylesheet" href="{{asset('assets/admin/plugins/summernote/summernote-bs4.css')}}">
-        <!-- Google Font: Source Sans Pro -->
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-        <!-- Bootstrap 4 RTL -->
-        <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.2.1/css/bootstrap.min.css">
-        <!-- Custom style for RTL -->
-        <link rel="stylesheet" href="{{asset('assets/admin/dist/css/custom.css')}}">
-
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=El+Messiri&display=swap" rel="stylesheet">
-
+        @include('layout.rtl_links')
     @endif
 
 
@@ -31,7 +22,9 @@
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
 <div class="wrapper">
 
-    <!-- Preloader -->
+
+    {{-- for load page --}}
+
     <div class="preloader flex-column justify-content-center align-items-center">
         <div class="sk-chase">
             <div class="sk-chase-dot"></div>
@@ -43,24 +36,24 @@
         </div>
     </div>
 
-    <!-- Navbar -->
+    {{-- start nav bar--}}
+
     <nav class="main-header navbar navbar-expand navbar-dark">
-        <!-- Left navbar links -->
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="index3.html" class="nav-link">{{trans('side_bar.home_nav')}}</a>
+                <a href="#" class="nav-link">{{trans('side_bar.home_nav')}}</a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
                 <a href="#" class="nav-link">{{trans('side_bar.contact')}}</a>
             </li>
         </ul>
 
-        <!-- Right navbar links -->
+
         <ul class="  navbar-nav ml-auto">
-            <!-- Navbar Search -->
+            {{-- for language--}}
             <div class="d-flex lang">
                 @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                     <li>
@@ -72,11 +65,13 @@
                     </li>
                 @endforeach
             </div>
-            <li class="nav-item">
 
+            <li class="nav-item">
+                {{-- for search icon--}}
                 <a class="nav-link" data-widget="navbar-search" href="#" role="button">
                     <i class="fas fa-search"></i>
                 </a>
+
                 <div class="navbar-search-block">
                     <form class="form-inline">
                         <div class="input-group input-group-sm">
@@ -95,20 +90,23 @@
                 </div>
             </li>
 
-            <!-- Messages Dropdown Menu -->
+            {{-- for massege icon--}}
             <li class="nav-item dropdown">
                 <a class="nav-link" data-toggle="dropdown" href="#">
                     <i class="far fa-comments"></i>
                     <span class="badge badge-danger navbar-badge">0</span>
                 </a>
             </li>
-            <!-- Notifications Dropdown Menu -->
+
+            {{-- for notification icon--}}
             <li class="nav-item dropdown">
                 <a class="nav-link" data-toggle="dropdown" href="#">
                     <i class="far fa-bell"></i>
                     <span class="badge badge-warning navbar-badge">0</span>
                 </a>
             </li>
+
+            {{-- for full screen icon--}}
             <li class="nav-item">
                 <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                     <i class="fas fa-expand-arrows-alt"></i>
@@ -116,13 +114,14 @@
             </li>
         </ul>
     </nav>
-    <!-- /.navbar -->
 
-    <!-- Main Sidebar Container -->
+    {{-- end nav bar--}}
+
+    {{-- start side bar--}}
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
-        <!-- Sidebar -->
+
         <div class="sidebar">
-            <!-- Sidebar user panel (optional) -->
+            {{-- for user image & name --}}
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
                     <img src="{{asset('assets/admin/dist/img/avatar.png')}}" class="img-circle elevation-2"
@@ -133,7 +132,7 @@
                 </div>
             </div>
 
-            <!-- SidebarSearch Form -->
+            {{-- for search icon--}}
             <div class="form-inline">
                 <div class="input-group" data-widget="sidebar-search">
                     <input class="form-control form-control-sidebar" type="search" placeholder="Search"
@@ -146,15 +145,14 @@
                 </div>
             </div>
 
-            <!-- Sidebar Menu -->
+            {{--TODO: start sidebar menu --}}
+
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                     data-accordion="false">
-                    <!-- Add icons to the links using the .nav-icon class
-                         with font-awesome or any other icon font library -->
                     <li class="nav-item menu-open">
                         <a href="#" class="nav-link active">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
+                            <i class="fa-duotone fa-house"></i> &nbsp;
                             <p class="ds">
                                 {{trans('side_bar.dashboard')}}
                                 <i class="right fas fa-angle-left"></i>
@@ -162,59 +160,67 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="./index.html" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                <a href="#" class="nav-link">
+                                    <i class="fa-regular fa-record-vinyl"></i> &nbsp;
                                     <p>{{trans('side_bar.dashboard_one')}}</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="./index2.html" class="nav-link active">
-                                    <i class="far fa-circle nav-icon"></i>
+                                <a href="#" class="nav-link active">
+                                    <i class="fa-regular fa-record-vinyl"></i> &nbsp;
                                     <p>{{trans('side_bar.dashboard_two')}}</p>
                                 </a>
                             </li>
-
                         </ul>
                     </li>
-
-
                 </ul>
             </nav>
-            <!-- /.sidebar-menu -->
+
+            {{--TODO: end sidebar menu --}}
+
         </div>
-        <!-- /.sidebar -->
+
+        {{--TODO: end side bar--}}
     </aside>
 
-    <!-- Content Wrapper. Contains page content -->
+    {{--TODO: start content --}}
     <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
-                    <div class=" col-sm-6">
-                        <h1 class="dir-right m-0">{{trans('content.banner')}}</h1>
-                    </div><!-- /.col -->
-                    <div class="col-sm-6">
-                        <ol class="breadcrumb dir-left">
-                            <li class="px-1"><a href="#">{{trans('content.home')}}</a></li>
-                        </ol>
-                    </div><!-- /.col -->
-                </div><!-- /.row -->
-            </div><!-- /.container-fluid -->
+
+                    {{-- for content header--}}
+
+                    @yield('content_header')
+
+                </div>
+            </div>
         </div>
-        <!-- /.content-header -->
 
-        <!-- Main content -->
-        @yield('content')
-        <!-- /.content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+
+                    {{-- for content --}}
+
+                    @yield('content')
+
+                </div>
+            </div>
+        </section>
     </div>
-    <!-- /.content-wrapper -->
 
+    {{--TODO: end content --}}
 
-    @extends('layout.footer')
+    {{--TODO: start footer --}}
+
+    @include('layout.footer')
+
+    {{--TODO: end footer --}}
+
 </div>
-<!-- ./wrapper -->
 
 @extends('layout.script')
+
 </body>
 </html>
