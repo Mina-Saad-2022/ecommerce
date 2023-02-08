@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\Ecommerce_controller ;
@@ -19,20 +20,31 @@ Route::group(
         'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
     ], static function () {
 
+/** TODO for return to login & register page */
 
     Route::get('/', static function () {
-        return view('index')->name('index');
+        return redirect()->route('ecommerce.login');
     });
-    Route::group(['prefix' => 'ecommerce', 'as' => 'ecommerce.'], function () {
 
+
+    Route::group(['prefix' => 'ecommerce', 'as' => 'ecommerce.'], static function () {
+
+        /** route for login */
+        Route::get('/login', [Ecommerce_controller::class, 'login'])->name('login');
+        /** route for register*/
+        Route::get('/register', [Ecommerce_controller::class, 'register'])->name('register');
+        /** route for home page dashboard */
         Route::get('dashboard/index', [Ecommerce_controller::class, 'index'])->name('index');
 
-    });
+        Route::get('/index', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-    Route::get('/', [Ecommerce_controller::class, 'home'])->name('index');
+    });
+    Auth::routes([]);
 
 });
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+/** route for login & register direct */
+
+//Route::get('/login', [Ecommerce_controller::class, 'login'])->name('login');

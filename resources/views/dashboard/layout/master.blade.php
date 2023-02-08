@@ -47,6 +47,17 @@
             <li class="nav-item d-none d-sm-inline-block">
                 <a href="#" class="nav-link">{{trans('side_bar.contact')}}</a>
             </li>
+           <li>
+               <a class="dropdown-item" href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                   {{ __('Logout') }}
+               </a>
+
+               <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                   @csrf
+               </form>
+           </li>
         </ul>
 
 
@@ -126,7 +137,7 @@
                          alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">Mina SaȜd</a>
+                    <a href="#" class="d-block">{{Auth::user()->name}}</a>
                 </div>
             </div>
 

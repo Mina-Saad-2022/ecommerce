@@ -24,6 +24,11 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
+    public function showRegistrationForm()
+    {
+        /** for return to login & register page */
+        return redirect()->route('ecommerce.login');
+    }
     /**
      * Where to redirect users after registration.
      *
@@ -66,7 +71,9 @@ class RegisterController extends Controller
     {
         return User::create([
             'name' => $data['name'],
+            'phone' =>$data['phone'],
             'email' => $data['email'],
+            'address' =>$data['address'],
             'password' => Hash::make($data['password']),
         ]);
     }
