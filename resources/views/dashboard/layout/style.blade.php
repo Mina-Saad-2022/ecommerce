@@ -26,4 +26,3 @@
 <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro-v6@44659d9/css/all.min.css" rel="stylesheet"
       type="text/css"/>
 <link rel="stylesheet" href="{{asset('assets/admin/dist/css/general.css')}}">
-<!--- Style css -->

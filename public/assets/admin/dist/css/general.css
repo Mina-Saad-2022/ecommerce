@@ -78,3 +78,11 @@ body {
 .os-padding  {
     top: -60px
 }
+/** to style button logout */
+[class*=sidebar-dark-] .user-panel .dropdown-menu{
+    position: relative !important;
+    inset: -43px auto auto -7px !important;
+ }
+[class*=sidebar-dark-] .user-panel .dropdown-item {
+    color: #ffff !important;
+}
