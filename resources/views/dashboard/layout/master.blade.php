@@ -133,7 +133,7 @@
             {{-- for user image & name --}}
             <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                 <div class="image">
-                    <img src="{{asset('assets/admin/dist/img/avatar.png')}}" class="img-circle elevation-2"
+                    <img src="http://bootdey.com/img/Content/avatar/avatar1.png" class="img-circle elevation-2"
                          alt="User Image">
                 </div>
                 <div class="info">
@@ -160,13 +160,15 @@
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                                     document.getElementById('logout-form').submit();"><i class="fa-duotone fa-right-from-bracket"></i> &nbsp
                                         {{ __('Logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
+
+                                    <a class="dropdown-item"  href="{{route('dashboard.profile')}}"><i class="fa-duotone fa-user"></i> &nbsp Your Profile</a>
                                 </div>
                             </li>
                         @endguest

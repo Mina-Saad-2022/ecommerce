@@ -15,33 +15,46 @@ use App\Http\Controllers\Ecommerce_controller ;
 |
 */
 Route::group(
+
     [
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
-    ], static function () {
+    ],  static function () {
 
     /** TODO for return to login & register page */
+    Auth::routes();
 
-    Route::get('/', static function () {
+    Route::get('/',  static function () {
         return redirect()->route('ecommerce.login');
     });
 
 
-    Route::group(['prefix' => 'ecommerce', 'as' => 'ecommerce.'], static function () {
+    Route::group(['prefix' => 'ecommerce/', 'as' => 'ecommerce.'], static function () {
+
 
         /** route for login */
-        Route::get('/login', [Ecommerce_controller::class, 'login'])->name('login');
-        /** route for register*/
-        Route::get('/register', [Ecommerce_controller::class, 'register'])->name('register');
-        /** route for home page dashboard */
-        Route::get('dashboard/index', [Ecommerce_controller::class, 'index'])->name('index');
 
-        Route::get('/index', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+        Route::get('/login',  static function () {
+            return view('auth.login');
+        })->name('login');
+
+        /** route for register*/
+        Route::get('register', [Ecommerce_controller::class, 'register'])->name('register');
+
+        Route::get('dashboard/index', [Ecommerce_controller::class, 'index_admin'])->name('index_admin');
+
+        Route::get('home_page', [Ecommerce_controller::class, 'index_user'])->name('index_user');
+
+
+        Route::get('index', [Ecommerce_controller::class, 'index'])->name('index');
+
+//        Route::get('/profile', [Ecommerce_controller::class, 'profile'])->name('profile');
+
 
     });
-    Auth::routes([]);
 
 });
+
 
 
 

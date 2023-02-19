@@ -2,7 +2,7 @@
 @extends('dashboard.layout.master')
 {{-- fro title page--}}
 @section('title')
-    {{trans('links.home_page')}}
+    {{trans('links/lang.home_page')}}
 @endsection
 
 {{-- for content header--}}

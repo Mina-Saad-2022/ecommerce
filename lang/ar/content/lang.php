@@ -3,10 +3,11 @@
 /** content translate */
 
 return [
-    'home'=>'الصفحة الرئيسية',
-    'banner'=>'بانر',
+    'home' => 'الصفحة الرئيسية',
+    'banner' => 'بانر',
     'clients' => 'عمـلاء',
     'sales' => 'مبيعـات',
-    'products'=>'منتجـات',
+    'products' => 'منتجـات',
     'earnings' => 'أربـاح',
+    'update' => 'تحديث',
 ];

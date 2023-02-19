@@ -2,8 +2,10 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use \App\Http\Controllers\Admin_controller;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
-use App\Http\Controllers\Ecommerce_controller ;
+use App\Http\Controllers\Ecommerce_controller;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,20 +16,24 @@ use App\Http\Controllers\Ecommerce_controller ;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//
 Route::group(
     [
         'prefix' => LaravelLocalization::setLocale(),
         'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
-    ], static function () {
+    ],
 
-    Route::group(['prefix' => 'ecommerce', 'as' => 'ecommerce.'], static function () {
+    static function () {
+    Auth::routes();
 
-        /** route for home page dashboard */
-        Route::get('dashboard/index', [Ecommerce_controller::class, 'index'])->name('index');
+    Route::group(['prefix' => 'dashboard/ecommerce', 'as' => 'dashboard.'], static function () {
 
-        Route::get('/index', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+        /** to open user profile page */
+//
+        Route::get('/profile', [Admin_controller::class, 'profile'])->name('profile');
+
+//        Route::post('/edit', [Admin_controller::class, 'edit'])->name('edit');
 
     });
 
-    });
+});

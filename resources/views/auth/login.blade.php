@@ -5,9 +5,9 @@
         @csrf
         {{-- input name--}}
         <div class="input-group w-100">
-            <label for="name" class="col-md-3 text-center float-left col-form-label text-md-end">{{ __('Name') }} :
+            <label for="name" class="col-md-3 col-sm-6 text-center float-left col-form-label text-md-end">{{ __('Name') }} :
                 &nbsp </label>
-            <div class="col-md-9">
+            <div class="col-md-9 col-sm-6">
                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name"
                        value="{{ old('name') }}" required autocomplete="name" autofocus>
                 @error('name')
@@ -85,14 +85,14 @@
         <button>
             Sign up
         </button>
-        <p>
+        <h6 class="m-3 text-danger">
 							<span>
 								Already have an account?
 							</span>
-            <b onclick="toggle()" class="pointer">
+            <b onclick="toggle()" class="pointer text-primary">
                 Sign in here
             </b>
-        </p>
+        </h6>
 
     </form>
 @endsection
@@ -102,7 +102,7 @@
         @csrf
         {{-- input login email --}}
         <div class="input-group">
-            <label for="email" class="col-md-3 text-bold ">{{ __('Email Address') }} : &nbsp</label>
+            <label for="email" class="col-md-3 col-sm-12 text-bold ">{{ __('Email Address') }} : &nbsp</label>
             <input id="email" type="email" class="col-md-8 form-control @error('email') is-invalid @enderror"
                    name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
             @error('email')
@@ -114,7 +114,7 @@
 
         {{-- input login password --}}
         <div class="input-group">
-            <label for="password" class="col-md-3  text-bold">{{ __('Password') }} : &nbsp</label>
+            <label for="password" class="col-md-3 col-sm-12 text-bold">{{ __('Password') }} : &nbsp</label>
             <input id="password" type="password"
                    class="col-md-8 form-control @error('password') is-invalid @enderror" name="password" required
                    autocomplete="current-password">
@@ -135,14 +135,14 @@
         Sign in
     </button>
     </form>
-     <p>
-							<span>
+     <h6 class="m-3 text-danger">
+							<span >
 								Don't have an account?
 							</span>
-        <b onclick="toggle()" class="pointer">
+        <b onclick="toggle()" class="pointer text-primary">
             Sign up here
         </b>
-    </p>
+    </h6>
 @endsection
 
 @section('text_login_registration')

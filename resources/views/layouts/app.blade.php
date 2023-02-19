@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Login') }}</title>
+    <title>{{trans('links/lang.login') }}</title>
     <link rel="stylesheet" href="{{asset('assets/login.css')}}">
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
