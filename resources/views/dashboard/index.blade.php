@@ -8,7 +8,7 @@
 {{-- for content header--}}
 @section('content_header')
     <div class=" col-sm-6">
-        <h6 class="dir-right m-0">{{trans('content.home')}}</h6>
+        <h6 class="dir-right m-0">{{trans('content/lang.home')}}</h6>
     </div>
 @endsection
 
@@ -21,7 +21,7 @@
                         <span class="info-box-icon bg-danger elevation-1"><i
                                 class="fa-regular fa-money-bill-trend-up"></i></span>
             <div class="info-box-content">
-                <span class="info-box-text Likes">{{trans('content.earnings')}}</span>
+                <span class="info-box-text Likes">{{trans('content/lang.earnings')}}</span>
                 <span class="info-box-number">41,410</span>
             </div>
         </div>
@@ -34,7 +34,7 @@
                         <span class="info-box-icon bg-success elevation-1"><i
                                 class="fa-regular fa-cart-circle-plus"></i></span>
             <div class="info-box-content">
-                <span class="info-box-text">{{trans('content.sales')}}</span>
+                <span class="info-box-text">{{trans('content/lang.sales')}}</span>
                 <span class="info-box-number">760</span>
             </div>
         </div>
@@ -45,7 +45,7 @@
         <div class="info-box mb-3"><span class="info-box-icon bg-primary elevation-1">
                             <i class="fa-regular fa-rectangle-history-circle-plus"></i></span>
             <div class="info-box-content">
-                <span class="info-box-text">{{trans('content.products')}}</span>
+                <span class="info-box-text">{{trans('content/lang.products')}}</span>
                 <span class="info-box-number">2,000</span>
             </div>
         </div>
@@ -56,11 +56,11 @@
         <div class="info-box mb-3"><span class="info-box-icon bg-warning elevation-1"><i
                     class="fas fa-users"></i></span>
             <div class="info-box-content">
-                <span class="info-box-text">{{trans('content.clients')}}</span>
-                <span class="info-box-number">2,000</span>
+                <span class="info-box-text">{{trans('content/lang.clients')}}</span>
+                {{-- count of users --}}
+                <span class="info-box-number">{{\App\Models\User::count()}}</span>
             </div>
         </div>
     </div>
-
 @endsection
 {{--TODO: end content --}}

@@ -21,64 +21,30 @@ class Admin_controller extends Controller
         $this->middleware('auth');
     }
 
-
-
-
     /** to open profile page */
 //    public function profile()
 //    {
 //        return view('dashboard.profile.index');
 //    }
 
+    /** to open edit page */
 
-//    public function rules()
-//    {
-//        $userId = Auth::id();
-//
-//        return [
-//            'username' => 'required|unique:users,username,'.$userId,
-//            'email' => 'required|email|unique:users,email,'.$userId,
-//            'password' => 'confirmed'
-//        ];
-//    }
-
-    /** to action edit */
-//    public function edit(Request $request)
-//    {
-//
-////        User::update([
-////            'name' => $request->name,
-////            'email' => $request->email,
-////            'phone' => $request->phone,
-////            'address' => $request->address,
-////        ]);
-//
-//
-//        $request->validate([
-//            'name' =>'required|min:4|string|max:255',
-//            'email'=>'required|email|string|max:255'
-//        ]);
-//        $user =Auth::user();
-//        $user->name = $request['name'];
-//        $user->email = $request['email'];
-//        $user->save();
-//        return back()->with('message','Profile Updated');
-////        return redirect(route('section.index'))->with(["edit" => ["Title", "body text"]]);
-//    }
-
-
-    public function profile(Request $request)
+    public function profile($id)
     {
-        dd(Auth::user()->all());
+        $edit_admin = User::findOrFail($id);
+        return view('dashboard.admin.profile', compact('edit_admin'));
+    }
 
-        $user_findorfail = User::findOrFail(Auth::user()->id);
+    public function action_edit(Request $request, $id)
+    {
+
+        $user_findorfail = User::findOrFail($id);
 
         $user_findorfail->update([
             'name' => $request->name,
             'email' => $request->email,
         ]);
-                return view('dashboard.profile.index');
-
+        return to_route('ecommerce.index');
     }
 
 }

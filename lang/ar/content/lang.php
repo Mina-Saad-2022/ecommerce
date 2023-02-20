@@ -9,5 +9,6 @@ return [
     'sales' => 'مبيعـات',
     'products' => 'منتجـات',
     'earnings' => 'أربـاح',
+    'edit'=>'تعديل',
     'update' => 'تحديث',
 ];

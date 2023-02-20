@@ -9,6 +9,7 @@ return [
     'sales' => 'Sales',
     'products' => 'Products',
     'earnings' => 'Earnings',
+    'edit'=>'Edit',
     'update' => 'Update',
 
 ];

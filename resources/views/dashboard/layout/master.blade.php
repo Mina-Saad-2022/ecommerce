@@ -47,7 +47,7 @@
             <li class="nav-item d-none d-sm-inline-block">
                 <a href="#" class="nav-link">{{trans('side_bar.contact')}}</a>
             </li>
-           <li>
+           <li class="nav-item d-none d-sm-inline-block mt-1">
                <a class="dropdown-item text-white" href="{{ route('logout') }}"
                   onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -168,7 +168,7 @@
                                         @csrf
                                     </form>
 
-                                    <a class="dropdown-item"  href="{{route('dashboard.profile')}}"><i class="fa-duotone fa-user"></i> &nbsp Your Profile</a>
+                                    <a class="dropdown-item"  href="{{route('dashboard.profile',Auth::user()->id)}}"><i class="fa-duotone fa-user"></i> &nbsp Your Profile</a>
                                 </div>
                             </li>
                         @endguest

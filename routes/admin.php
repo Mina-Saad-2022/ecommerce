@@ -29,10 +29,12 @@ Route::group(
     Route::group(['prefix' => 'dashboard/ecommerce', 'as' => 'dashboard.'], static function () {
 
         /** to open user profile page */
-//
-        Route::get('/profile', [Admin_controller::class, 'profile'])->name('profile');
 
-//        Route::post('/edit', [Admin_controller::class, 'edit'])->name('edit');
+        Route::group(['prefix' => 'profile'], function () {
+            Route::get('/{id}', [Admin_controller::class, 'profile'])->name('profile');
+            Route::post('/{id}', [Admin_controller::class, 'action_edit'])->name('action_edit');
+
+        });
 
     });
 
