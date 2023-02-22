@@ -158,6 +158,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    {{--to open profile page--}}
+                                    <a class="dropdown-item"  href="{{route('dashboard.profile',Auth::user()->id)}}"><i class="fa-duotone fa-user"></i> &nbsp Your Profile</a>
+                                    {{--for logout--}}
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"><i class="fa-duotone fa-right-from-bracket"></i> &nbsp
@@ -168,7 +171,6 @@
                                         @csrf
                                     </form>
 
-                                    <a class="dropdown-item"  href="{{route('dashboard.profile',Auth::user()->id)}}"><i class="fa-duotone fa-user"></i> &nbsp Your Profile</a>
                                 </div>
                             </li>
                         @endguest

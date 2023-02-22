@@ -21,11 +21,11 @@ class Admin_controller extends Controller
         $this->middleware('auth');
     }
 
-    /** to open profile page */
-//    public function profile()
-//    {
-//        return view('dashboard.profile.index');
-//    }
+    /** to open home page dashboard for admin */
+    public function index_admin()
+    {
+        return view('dashboard.index');
+    }
 
     /** to open edit page */
 

@@ -22,7 +22,7 @@ Route::group(
     ],  static function () {
 
     /** TODO for return to login & register page */
-    Auth::routes();
+
 
     Route::get('/',  static function () {
         return redirect()->route('ecommerce.login');
@@ -41,19 +41,21 @@ Route::group(
         /** route for register*/
         Route::get('register', [Ecommerce_controller::class, 'register'])->name('register');
 
-        Route::get('dashboard/index', [Ecommerce_controller::class, 'index_admin'])->name('index_admin');
 
         Route::get('home_page', [Ecommerce_controller::class, 'index_user'])->name('index_user');
 
+        /** to check if clint admin open dashboard home page is not admin open ecommerce home page */
 
         Route::get('index', [Ecommerce_controller::class, 'index'])->name('index');
 
-//        Route::get('/profile', [Ecommerce_controller::class, 'profile'])->name('profile');
+
+
 
 
     });
-
+    Auth::routes();
 });
+
 
 
 

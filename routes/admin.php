@@ -17,25 +17,30 @@ use App\Http\Controllers\Ecommerce_controller;
 |
 */
 //
-Route::group(
-    [
-        'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
-    ],
 
-    static function () {
-    Auth::routes();
 
-    Route::group(['prefix' => 'dashboard/ecommerce', 'as' => 'dashboard.'], static function () {
+    Route::group(
+        [
+            'prefix' => LaravelLocalization::setLocale(),
+            'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath','check_admin']
+        ],
 
-        /** to open user profile page */
+        static function () {
 
-        Route::group(['prefix' => 'profile'], function () {
-            Route::get('/{id}', [Admin_controller::class, 'profile'])->name('profile');
-            Route::post('/{id}', [Admin_controller::class, 'action_edit'])->name('action_edit');
 
+            Route::group(['prefix' => 'dashboard/ecommerce', 'as' => 'dashboard.'], static function () {
+
+                /** to open user profile page */
+
+                Route::group(['prefix' => 'profile'], function () {
+                    Route::get('/index', [Admin_controller::class, 'index_admin'])->name('index_admin');
+
+
+                    Route::get('/{id}', [Admin_controller::class, 'profile'])->name('profile');
+                    Route::post('/{id}', [Admin_controller::class, 'action_edit'])->name('action_edit');
+
+                });
+
+            });
+//            Auth::routes();
         });
-
-    });
-
-});

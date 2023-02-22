@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Contracts\View\Factory;
-use Illuminate\Contracts\View\View ;
-use Illuminate\Contracts\Foundation\Application ;
+use Illuminate\Contracts\View\View;
+use Illuminate\Contracts\Foundation\Application;
+
 class Ecommerce_controller extends Controller
 {
     /**
@@ -20,18 +21,19 @@ class Ecommerce_controller extends Controller
     }
 
 
-   /** to open login page */
+    /** to open login page */
     public function login()
     {
         return view('auth.login');
     }
 
-
-    /** to open home page dashboard for admin */
-    public function index_admin()
+    /** to return for login page */
+    public function register()
     {
-        return view('dashboard.index');
+        return to_route('ecommerce.login');
     }
+
+
 
     /** to open home page ecommerce for user */
     public function index_user()
@@ -46,13 +48,13 @@ class Ecommerce_controller extends Controller
     {
         /** to redirect to dashboard for admin */
         if (Auth::user()->type === 'admin') {
-          return to_route('ecommerce.index_admin');
+            return to_route('dashboard.index_admin');
+        } else {
+            /**  to redirect to ecommerce for user  */
+            return to_route('ecommerce.index_user');
         }
 
-        /**  to redirect to ecommerce for user  */
-        if (Auth::user()->type === 'user') {
-          return to_route('ecommerce.index_user');
-        }
+
     }
 
 
