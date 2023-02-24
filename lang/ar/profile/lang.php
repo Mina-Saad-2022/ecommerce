@@ -7,6 +7,7 @@ return [
     'user_name'=>'اسم المستخدم',
     'user_email'=>'البريد الإلكتروني',
     'user_address'=>'عنوان المستخدم',
-    'user_phone'=>'رقم الهاتف'
+    'user_phone'=>'رقم الهاتف' ,
+    'image_upload' => 'تحديث الصورة الشخصية' ,
 
 ];

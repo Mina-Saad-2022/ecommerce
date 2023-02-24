@@ -7,5 +7,6 @@ return [
     'user_name'=>'User Name',
     'user_email'=>'User Email',
     'user_address'=>'User Address',
-    'user_phone'=>'User Phone'
+    'user_phone'=>'User Phone' ,
+    'image_upload'=> 'Upload new image' ,
 ];

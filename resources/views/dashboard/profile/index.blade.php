@@ -10,7 +10,7 @@
     <div class=" profile_card col">
         {{--        <h6 class="">{{trans('content.home')}}</h6>--}}
         <ol class="breadcrumb">
-            <li><a href="{{route('ecommerce.index_admin')}}">{{trans('content/lang.home')}}</a></li>
+            <li><a href="{{route('dashboard.index_admin')}}">{{trans('content/lang.home')}}</a></li>
             <li>&nbsp / &nbsp</li>
             <li>{{trans('profile/lang.acct_deets')}}</li>
 
@@ -30,11 +30,11 @@
                 <div class="card mb-4 mb-xl-0">
                     <div class="card-body text-center">
                         <!-- Profile picture image-->
-                        <img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                        <img class="img-account-profile rounded-circle mb-2" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
                         <!-- Profile picture help block-->
                         <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
                         <!-- Profile picture upload button-->
-                        <button class="btn btn-primary" type="button">Upload new image</button>
+                        <button class="btn btn-primary" type="button">{{ __('profile/lang.image_upload') }}</button>
                     </div>
                 </div>
             </div>
@@ -82,7 +82,7 @@
 
             <div class="col-md-8 col-sm-12 m-auto">
                     <a class="w-100 text-white" href="{{route('ecommerce.index')}}">
-                        <button class="w-100 btn btn-primary">   {{trans('content/lang.update')}}</button>
+                        <button class="w-100 btn btn-primary">   {{trans('general/lang.update')}}</button>
                     </a>
             </div>
 

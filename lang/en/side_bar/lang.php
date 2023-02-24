@@ -5,7 +5,7 @@
 return [
 
     'dashboard'=>'Dashboard',
-    'dashboard_one' => 'Dashboard ( 1 )',
+    'setting' => 'Setting Ecommerce',
     'dashboard_two' => 'Dashboard ( 2 ) ',
 
     /** nav bar */

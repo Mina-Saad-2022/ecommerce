@@ -17,7 +17,8 @@
 
 
 </head>
-<body class="hold-transition dark-mode sidebar-mini dashboard.layout-fixed dashboard.layout-navbar-fixed dashboard.layout-footer-fixed">
+<body
+    class="hold-transition dark-mode sidebar-mini dashboard.layout-fixed dashboard.layout-navbar-fixed dashboard.layout-footer-fixed">
 <div class="wrapper">
 
 
@@ -42,22 +43,11 @@
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link">{{trans('side_bar.home_nav')}}</a>
+                <a href="#" class="nav-link">{{trans('side_bar/lang.home_nav')}}</a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link">{{trans('side_bar.contact')}}</a>
+                <a href="#" class="nav-link">{{trans('side_bar/lang.contact')}}</a>
             </li>
-           <li class="nav-item d-none d-sm-inline-block mt-1">
-               <a class="dropdown-item text-white" href="{{ route('logout') }}"
-                  onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                   {{ __('Logout') }}
-               </a>
-
-               <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                   @csrf
-               </form>
-           </li>
         </ul>
 
 
@@ -153,18 +143,21 @@
                             @endif
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
+                                   data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     {{--to open profile page--}}
-                                    <a class="dropdown-item"  href="{{route('dashboard.profile',Auth::user()->id)}}"><i class="fa-duotone fa-user"></i> &nbsp Your Profile</a>
+                                    <a class="dropdown-item" href="{{route('dashboard.profile',Auth::user()->id)}}"><i
+                                            class="fa-duotone fa-user"></i> &nbsp {{ __('content/lang.profile')}}</a>
                                     {{--for logout--}}
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();"><i class="fa-duotone fa-right-from-bracket"></i> &nbsp
-                                        {{ __('Logout') }}
+                                                     document.getElementById('logout-form').submit();"><i
+                                            class="fa-duotone fa-right-from-bracket"></i> &nbsp
+                                        {{ __('content/lang.logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -175,7 +168,7 @@
                             </li>
                         @endguest
                     </ul>
-{{--                    <a href="#" class="d-block">{{Auth::user()->name}}</a>--}}
+                    {{--                    <a href="#" class="d-block">{{Auth::user()->name}}</a>--}}
                 </div>
             </div>
 
@@ -201,21 +194,21 @@
                         <a href="#" class="nav-link active">
                             <i class="fa-duotone fa-house"></i> &nbsp;
                             <p class="ds">
-                                {{trans('side_bar.dashboard')}}
+                                {{trans('side_bar/lang.dashboard')}}
                                 <i class="right fas fa-angle-left"></i>
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="fa-regular fa-record-vinyl"></i> &nbsp;
-                                    <p>{{trans('side_bar.dashboard_one')}}</p>
+                                <a href="{{route('dashboard.setting')}}" class="nav-link">
+                                    <i class="fa-duotone fa-gears"></i> &nbsp;
+                                    <p>{{trans('side_bar/lang.setting')}}</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link active">
                                     <i class="fa-regular fa-record-vinyl"></i> &nbsp;
-                                    <p>{{trans('side_bar.dashboard_two')}}</p>
+                                    <p>{{trans('side_bar/lang.dashboard_two')}}</p>
                                 </a>
                             </li>
                         </ul>

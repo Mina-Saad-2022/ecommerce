@@ -21,6 +21,7 @@ class Admin_controller extends Controller
         $this->middleware('auth');
     }
 
+
     /** to open home page dashboard for admin */
     public function index_admin()
     {
@@ -28,23 +29,29 @@ class Admin_controller extends Controller
     }
 
     /** to open edit page */
-
     public function profile($id)
     {
         $edit_admin = User::findOrFail($id);
-        return view('dashboard.admin.profile', compact('edit_admin'));
+        return view('dashboard.profile.index', compact('edit_admin'));
     }
 
+    /** to action edit */
     public function action_edit(Request $request, $id)
     {
 
-        $user_findorfail = User::findOrFail($id);
+        $user = User::findOrFail($id);
 
-        $user_findorfail->update([
+        $user->update([
             'name' => $request->name,
             'email' => $request->email,
+            'address' => $request->address,
+            'phone' => $request->phone,
         ]);
         return to_route('ecommerce.index');
     }
 
+    /** to open setting ecommerce page */
+    public  function setting(){
+        return view('dashboard/setting.index');
+    }
 }

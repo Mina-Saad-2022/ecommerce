@@ -40,7 +40,7 @@ class RouteServiceProvider extends ServiceProvider
             /** route admin */
             Route::middleware(['web','auth','check_admin'])
                 ->namespace($this->namespace)
-                ->group(base_path('routes/admin.php'));
+                ->group(base_path('routes/dashboard/web.php'));
         });
     }
 

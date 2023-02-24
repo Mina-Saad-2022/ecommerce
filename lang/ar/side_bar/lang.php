@@ -1,8 +1,8 @@
 <?php
-/** side bar translate */
+/** sidebar translate */
 return [
     'dashboard' => 'لوحة التحكم',
-    'dashboard_one' => ' ( 1 ) لوحة التحكم',
+    'setting' => ' إعدادات المتجر الإلكتروني',
     'dashboard_two' => ' ( 2 ) لوحة التحكم',
 
     /** nav bar */

@@ -12,14 +12,15 @@ class Setting extends Model
     protected $fillable = [
         'title',
         'description',
-        'logo',
+        'icon',
         'address',
         'phone',
         'whatsapp',
         'facebook',
-        'youtube',
+        'linkedin',
 
     ];
     protected $table = 'settings';
+
 
 }
