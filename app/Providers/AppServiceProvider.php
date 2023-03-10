@@ -26,9 +26,19 @@ class AppServiceProvider extends ServiceProvider
     {
         $setting = Setting::firstOr(function (){
             return setting::create([
-                'title' => 'title 1'
+                'title' => 'title',
+                'description' => 'description',
+                'icon' => 'icon',
+                'address' => 'address',
+                'phone' => 'phone',
+                'whatsapp' => 'whatsapp',
+                'facebook' => 'facebook',
+                'linkedin' => 'linkedin',
+
             ]);
+
         });
+//        dd($setting);
 view()->share('setting',$setting);
     }
 }

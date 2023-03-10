@@ -31,6 +31,7 @@ class SettingUpdateRequest extends FormRequest
             "facebook" => 'string',
             "linkedin" => 'string',
             "description" => 'string',
+            'icon'=> 'image'
         ];
     }
 }

@@ -98,17 +98,28 @@
                                 </div>
                             </div>
                             {{-- icon ecommerce--}}
-                            <div class="p-2 text-center col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
-                                <div class="col-6  m-auto">
-                                    <!-- Profile picture image-->
-                                    <img  class=" icon_ecommerce rounded-circle mb-2"
-                                         src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
-                                    <button class="btn btn-primary" type="button">icon upload</button>
-
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                                <div class="form-group">
+                                    <img class="image_book" src="{{asset('storage/app/public/image/' . $setting->icon)}}" alt="">
+                                    <input type="file" name="icon" class="form-control" id="icon">
                                 </div>
-
-
                             </div>
+
+                            {{--                            <div class="p-2 text-center col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">--}}
+{{--                                <div class="col-6  m-auto">--}}
+{{--                                    <!-- Profile picture image-->--}}
+{{--                                    @if($setting->icon === NULL)--}}
+{{--                                        <img  class=" icon_ecommerce rounded-circle mb-2"--}}
+{{--                                              src="https://bootdey.com/img/Content/avatar/avatar1.png"  alt="">--}}
+{{--                                    @else--}}
+{{--                                        <img  class=" icon_ecommerce rounded-circle mb-2"--}}
+{{--                                              src="https://bootdey.com/img/Content/avatar/avatar1.png"  alt="">--}}
+{{--                                    @endif--}}
+{{--<input name="icon" type="file" class="buttons">--}}
+{{--                                </div>--}}
+
+
+{{--                            </div>--}}
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                                 <div class="text-center">
                                     <button type="submit" id="submit" name="submit"

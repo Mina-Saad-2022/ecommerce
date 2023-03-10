@@ -17,7 +17,7 @@ return new class extends Migration
             $table->increments('id');
             $table->string('title')->nullable();
             $table->longText('description')->nullable();
-            $table->string('icon')->nullable();
+            $table->string('icon');
             $table->string('address')->nullable();
             $table->integer('phone')->nullable();
             $table->string('whatsapp')->nullable();
